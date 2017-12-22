@@ -1,7 +1,40 @@
 document.addEventListener('DOMContentLoaded', function() {
-  const imageId = 1 //Enter your assigned imageId here
-  const imageURL = `https://randopic.herokuapp.com/images/${imageId}`
-  const likeURL = `https://randopic.herokuapp.com/likes/`
-  const commentsURL = `https://randopic.herokuapp.com/comments/`
+  console.log('content loaded')
+
+  Adapter.loadPicture();
+
+  document.getElementById("image_card").addEventListener("click", buttons);
+
+  function buttons() {
+    event.preventDefault();
+
+    if (event.target.id === "like_button") {
+      return add_like();
+    } else if (event.target.id === "submit") {
+      return add_comment();
+    } else if (event.target.id.slice(0, 6) ==="delete") {
+      return delete_comment();
+    }
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 })
